@@ -1,5 +1,344 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background: var(--page-background-image) no-repeat center/cover;
+  background-color: var(--page-background-color);
+  background-attachment: fixed;
+  padding-inline: var(--side-padding);
+}
+
+.decorated-zone {
+  height: 100vh;
+  align-content: center;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.header {
+  min-height: 668px;
+  align-content: space-between;
+  padding-block: 65px;
+  grid-template-rows: repeat(3, min-content);
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  display: block;
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+  border: 1px solid var(--interfase-color); 
+}
+
+.decorated-zone::before {
+  top: var(--side-padding);
+  right: 0;
+  border-bottom: none;
+  border-left: none;
+}
+
+.decorated-zone::after {
+  bottom: var(--side-padding);
+  left: 0;
+  border-top: none;
+  border-right: none;
+}
+
+.header__theme-menu {
+    margin-block: 10px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  min-height: 26px;
+  min-width: 70px;
+  border: 1px solid transparent;
+  color: var(--interfase-color);
+  background-color: transparent;
+  font-weight: 400;
+  font-size: var(--font-size);
+  line-height: 100%;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  box-shadow: 0 2px 0 0 var(--interfase-color);
+}
+
+.header__theme-menu-button_active {
+  border-color: currentColor;
+  pointer-events: none;
+}
+
+.decoration-title {
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  color: var(--decoration-title-color);
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.header__title {
+  text-shadow: 4px 4px 0px var(--accent-color);
+}
+
+.header__subtitle {
+  font-weight: 700;
+  font-size: var(--font-size);
+  line-height: 130%;
+}
+
+.accent-title {
+  color: #000028;
+  background-color: var(--accent-color);
+}
+
+.header__decoration-text {
+  position: absolute;
+  top: var(--side-padding);
+  right: 9px;
+  display: var(--decoration-element-display);
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+  font-weight: 400;
+  font-size: var(--font-size);
+  line-height: 25px;
+  text-align: center;
+}
+
+.header__decoration-text::after {
+  content: '';
+  display: block;
+  block-size: 9px;
+  inline-size: 9px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px currentColor;
+  background-color: currentColor;
+}
+
+.content {
+  margin-block: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  font-size: var(--font-size);
+  line-height: 130%;
+}
+
+.section__title {
+  color: var(--block-title-color);
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
+}
+
+.section__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__chapter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section__subtitle {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
+}
+
+.section__text {
+  color: var(--text-color);
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 400;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section__list-title {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 400;
+}
+
+.section_full-width {
+  gap: 10px;
+}
+
+.section__title_background-color {
+  color: #000028;
+  background-color: var(--accent-color);
+}
+
+.section__gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.section__image {
+    inline-size: 100%;
+    block-size: 100%;
+    max-block-size: 100%;
+    object-fit: cover;
+}
+
+.footer__title {
+    justify-self: center;
+}
+
+@media (min-width:768px) {
+
+.header {
+  min-height: 800px;
+  padding-block: 182px;
+}
+
+.decoration-title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+}
+
+.header__title {
+  margin-inline-start: calc(-1 * var(--side-padding));
+}
+
+.header__subtitle {
+  width: 50%;
+  justify-self: end;
+}
+
+.content {
+  margin-block: 60px;
+  gap: 80px;
+}
+
+.section {
+  grid-template-columns: 1fr 2fr;
+}
+
+.section__content-wrapper_column-text {
+    grid-column: 1/-1
+}
+
+.section_full-width {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.section__gallery {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.section__image:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1 / span 2
+}
+
+.section__image:nth-child(2) {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+}
+
+.section__image:nth-child(3) {
+    grid-row: 2 / span 2;
+    grid-column: 1;
+}
+.section__image:nth-child(5) {
+    grid-row: 3;
+    grid-column: 2 / span 2;
+}
+  
+}
+
+@media (min-width:1024px) {
+
+.header {
+  min-height: 580px;
+  padding-block-start: 20px;
+  padding-block-end: 134px;
+  grid-template-rows: 1fr min-content min-content;
+  gap: 114px;
+}
+
+.header__theme-menu {
+  margin-block: 0;
+  justify-self: center;
+  align-self: start;
+}
+
+.header__theme-menu-list {
+  flex-direction: row;
+}
+
+.section__content-wrapper_column-text {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+@media (hover: hover) {
+
+.header__theme-menu-button {
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--interfase-color-hover);
+}
+
+.link:hover {
+  border-bottom: 1px solid currentColor;
+  /*Подчеркивание через border, так как underline имеет цветовую тень ссылки. чтобы бордер не смещал текст использован margin -1*/
+  margin-bottom: -1px; 
+}
+
 }

@@ -1,4 +1,23 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --page-background-image: url('../images/cover-image-dark.png');
+  --page-background-color: rgb(0, 0, 53);
+  --accent-color: #FF0070;
+  --decoration-title-color: #DB00FF;
+  --block-title-color: var(--accent-color);
+  --text-color: #F1B2CE;
+  --interfase-color: var(--accent-color);
+  --interfase-color-hover: #FF007066;
+  --decoration-element-display: flex;
+  --font-size: 18px;
+  --side-padding: 10px;
+}
+
+
+@media (min-width: 768px) {
+
+:root {
+  --side-padding: 20px;
+}
+
+}
+
