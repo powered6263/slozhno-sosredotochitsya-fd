@@ -28,7 +28,7 @@
   position: absolute;
   block-size: 25px;
   inline-size: 25px;
-  border: 1px solid var(--interfase-color); 
+  border: 1px solid var(--interfase-color);
 }
 
 .decorated-zone::before {
@@ -338,7 +338,7 @@
 .link:hover {
   border-bottom: 1px solid currentColor;
   /*Подчеркивание через border, так как underline имеет цветовую тень ссылки. чтобы бордер не смещал текст использован margin -1*/
-  margin-bottom: -1px; 
+  margin-bottom: -1px;
 }
 
 }
