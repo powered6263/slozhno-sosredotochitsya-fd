@@ -1,6 +1,6 @@
 :root.theme-dark {
   --page-background-image: url('../images/cover-image-dark.png');
-  --page-background-color: rgb(0, 0, 53);
+  --page-background-color: #000028;
   --accent-color: #FF0070;
   --decoration-title-color: #DB00FF;
   --block-title-color: var(--accent-color);
